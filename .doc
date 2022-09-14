@@ -1,2 +1,0 @@
-export $(cat .env | xargs)
-export GOSUMDB=off
