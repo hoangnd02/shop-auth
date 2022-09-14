@@ -25,5 +25,16 @@ services:
       - 6379:6379
     restart: always
 
+  envoy:
+    image: envoyproxy/envoy:v1.21-latest
+    restart: always
+    ports:
+      - "8099:8099"
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: /usr/local/bin/envoy -l info -c /etc/envoy/envoy.yaml
+
 volumes:
   dbData:
