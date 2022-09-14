@@ -1,0 +1,8 @@
+---
+apiVersion: ambassador/v1
+kind: Mapping
+name: app_api_mapping
+host: www.app.local:8080
+prefix: /api/v2/myauth
+rewrite: /api/v2/
+service: app.local:3003

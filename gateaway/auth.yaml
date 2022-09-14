@@ -1,0 +1,11 @@
+---
+apiVersion: ambassador/v1
+kind: AuthService
+name: authentication
+auth_service: auth:3003
+path_prefix: /api/v2/auth
+proto: http
+allowed_authorization_headers:
+  - "Authorization"
+allowed_request_headers:
+  - "Authorization"
